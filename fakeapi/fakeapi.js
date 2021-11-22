@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
 
-app.use(express.json);
+app.use(express.json());
 
-app.use("/fakeapi",((req, res, next) => {
+
+app.get("/fakeapi",((req, res, next) => {
+    console.log("Fake API");
     return res.send("Hello From Fake API server");
 }));
 
